@@ -85,7 +85,7 @@ p {
     width: 1200px;
     margin: 0 auto;
     margin-top: -350px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .35);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -113,7 +113,6 @@ p {
     width: 48.5%;
     padding-top: 45px;
     display: inline-block;
-    background-color: white;
     vertical-align: top;
 }
 

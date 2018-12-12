@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
+        <link href="css/animate.css" type="text/css" rel="stylesheet"/>
         <link rel="shortcut icon" type="image/png" href="images/favi_dg.png"/>
         <title>DG | Digital Creative Agency | Prototype-sessie</title>
     </head>
