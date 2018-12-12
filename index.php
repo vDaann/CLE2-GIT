@@ -31,6 +31,7 @@
                             van uw Digitale Strategie is lastig. Zelfs met een zorgvuldig samengestelde
                             shortlist en een helder geformuleerd ‘Request for Proposal’ blijkt er in de praktijk
                             toch nog te vaak op onderbuikgevoel geselecteerd te worden.</p><br>
+
                         <p>Bij DG denken we dat dit anders kan – en moet! Om die reden laten wij u
                             graag <span class="bold">vooraf</span> zien wat we kunnen betekenen. In het DG|Creative Lab nodigen we u daarom
                             graag uit voor een Prototype Sessie.</p>
@@ -38,6 +39,15 @@
                     </div>
 
                     <div class="right-info">
+                        <p class="bold">Wat is een Prototype Sessie?</p>
+                        <div class="separator"></div>
+                        <p>Op basis van een intake inventariseren we uw project. We vragen naar doelstellingen,
+                            doelgroep, positionering, grafische richtlijnen en beschikbare referentie-projecten.
+                            Vervolgens gaan onze designers, developers en marketeers aan de slag. Het resultaat
+                            is een werkend Prototype van uw website/applicatie of campagne.</p><br>
+
+                        <p>Tijdens de 2-uur durende Prototype Sessie presenteren we de visie van DG op het project
+                            en de roadmap die we hebben gevolgd om te komen van Digitale Strategie naar Prototype.</p>
 
                     </div>
                 </div>
