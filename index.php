@@ -65,6 +65,29 @@
                             <label>Bedrijfsnaam</label><br>
                             <input type="text" name="company"/>
                         </div>
+                        <div>
+                            <label>Website bedrijf</label><br>
+                            <input type="text" name="website"/>
+                        </div>
+                        <div>
+                            <label>E-mailadres</label><br>
+                            <input type="email" name="email"/>
+                        </div>
+                        <div>
+                            <label>Telefoonnummer</label><br>
+                            <input type="number" name="phone"/>
+                        </div>
+                        <div>
+                            <label>Datum</label><br>
+                            <input type="date" name="date"/>
+                        </div>
+                        <label>Tijdsblok</label><br>
+                        <select>
+                            <option value="12:00">12:00</option>
+                            <option value="14:00">14:00</option>
+                            <option value="16:00">16:00</option>
+                        </select>
+                        <input type="checkbox" name="checkbox" value="akkoord">Ja, ik ga geef toestemming.
                     </form>
                 </div>
             </div>
