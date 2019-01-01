@@ -57,37 +57,44 @@
             <div class="form-wrap">
                 <div class="form">
                     <form action="reservation.php" method="post">
-                        <div>
+                        <div class="left">
                             <label>Voor- en achternaam</label><br>
                             <input type="text" name="fullname"/>
                         </div>
-                        <div>
-                            <label>Bedrijfsnaam</label><br>
-                            <input type="text" name="company"/>
-                        </div>
-                        <div>
-                            <label>Website bedrijf</label><br>
-                            <input type="text" name="website"/>
-                        </div>
-                        <div>
+                        <div class="right">
                             <label>E-mailadres</label><br>
                             <input type="email" name="email"/>
                         </div>
-                        <div>
+                        <div class="left">
+                            <label>Bedrijfsnaam</label><br>
+                            <input type="text" name="company"/>
+                        </div>
+                        <div class="right">
                             <label>Telefoonnummer</label><br>
                             <input type="number" name="phone"/>
                         </div>
-                        <div>
+                        <div class="left">
                             <label>Datum</label><br>
                             <input type="date" name="date"/>
                         </div>
-                        <label>Tijdsblok</label><br>
-                        <select>
-                            <option value="12:00">12:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="16:00">16:00</option>
-                        </select>
-                        <input type="checkbox" name="checkbox" value="akkoord">Ja, ik ga geef toestemming.
+                        <div class="right timestamp">
+                            <label>Tijdsblok</label><br>
+                                <select>
+                                    <option value="12:00">12:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                        </div>
+                        <div class="left">
+                            <label>Website bedrijf</label><br>
+                            <input type="text" name="website"/>
+                        </div>
+                        <div class="agreed">
+                            <label>Toestemming gegevensverwerking</label><p></p>
+                            <input type="checkbox" name="checkbox" value="akkoord" class="inner-agreed">Ja, ik ga geef toestemming.<br/>
+                            <p class="info-agreed">Met het invullen van deze gegevens geef ik toestemming aan DG Inernetbureau om mijn gegevens te verwerken,
+                                op de manier zoals beschreven is in de privacyverklaring.</p>
+                        </div>
                     </form>
                 </div>
             </div>

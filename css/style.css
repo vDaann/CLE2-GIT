@@ -132,7 +132,6 @@ p {
     width: 1200px;
     margin: 0 auto;
     background-color: red;
-
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -143,19 +142,71 @@ p {
     padding-bottom: 45px;
     padding-top: 45px;
 }
-/*
+
 input {
+    margin-top: 10px;
     background-color: #f7f8f9;
     border-color: #dbddde;
-    border-width: 1px;
+    border-width: 0;
     border-style: solid;
     color: #a0a2a6;
     padding-top: 11px;
     padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    width: 95%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+}
+
+.timestamp select {
+    margin-top: 10px;
+    background-color: #f7f8f9;
+    border-color: #dbddde;
+    border-width: 0;
+    border-style: solid;
+    color: #a0a2a6;
+    padding-top: 11px;
+    padding-bottom: 10px;
     font-size: 14px;
     line-height: 16px;
     width: 100%;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
 }
-*/
+
+select {
+    min-height: 42px !important;
+}
+
+.agreed {
+    width: 45%;
+}
+
+.info-agreed {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.inner-agreed {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.left, .right {
+    width: 45%;
+    vertical-align: top;
+    margin-bottom: 25px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
