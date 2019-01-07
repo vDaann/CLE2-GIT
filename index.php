@@ -95,6 +95,9 @@
                             <p class="info-agreed">Met het invullen van deze gegevens geef ik toestemming aan DG Inernetbureau om mijn gegevens te verwerken,
                                 op de manier zoals beschreven is in de privacyverklaring.</p>
                         </div>
+                        <div class="button left">
+                            <input type="submit" value="Verzenden"/>
+                        </div>
                     </form>
                 </div>
             </div>
