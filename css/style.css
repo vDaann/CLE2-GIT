@@ -14,6 +14,10 @@ p {
     margin: 0;
 }
 
+.errors {
+    color: red;
+}
+
 .form-intro h2 {
     margin-top: 0;
     font-size: 36px;
@@ -195,6 +199,13 @@ input {
     width: 95%;
     padding-right: 2.5%;
     padding-left: 2.5%;
+    transition: all .1s ease-in-out;
+}
+
+input:focus {
+    border-color: black;
+    color: black;
+    transition: all .1s ease-in-out;
 }
 
 .timestamp select {
@@ -212,6 +223,13 @@ input {
     width: 100%;
     padding-right: 2.5%;
     padding-left: 2.5%;
+    transition: all .1s ease-in-out;
+}
+
+.timestamp select:focus {
+    border-color: black;
+    color: black;
+    transition: all .1s ease-in-out;
 }
 
 select {
@@ -235,6 +253,7 @@ select {
     margin-right: 10px;
     margin-top: 25px;
     margin-bottom: 25px;
+    min-width: 0;
 }
 
 .left, .right {

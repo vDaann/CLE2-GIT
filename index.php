@@ -1,30 +1,29 @@
 <?php
-//Check if Post isset, else do nothing
 if (isset($_POST['submit'])) {
-    //Require database in this file & image helpers
+//Require database in this file & image helpers
     require_once "includes/database.php";
 
-    //Postback with the data showed to the user, first retrieve data from 'Super global'
+//Postback with the data showed to the user, first retrieve data from 'Super global'
     $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
-    $email   = mysqli_escape_string($db, $_POST['email']);
-    $company  = mysqli_escape_string($db, $_POST['company']);
-    $phone   = mysqli_escape_string($db, $_POST['phone']);
-    $date = mysqli_escape_string($db, $_POST['date']);
-    $timestamp = mysqli_escape_string($db, $_POST['timestamp']);
+    $email = mysqli_escape_string($db, $_POST['email']);
+    $company = mysqli_escape_string($db, $_POST['company']);
+    $phone = mysqli_escape_string($db, $_POST['phone']);
+    $date_day = mysqli_escape_string($db, $_POST['date_day']);
+    $date_time = mysqli_escape_string($db, $_POST['date_time']);
     $website = mysqli_escape_string($db, $_POST['website']);
-    $checkbox = mysqli_escape_string($db, $_POST['checkbox']);
+    $agreed = mysqli_escape_string($db, $_POST['agreed']);
 
-    //Require the form validation handling
+//Require the form validation handling
     require_once "includes/form-validation.php";
 
-    //Special check for add form only
+//Special check for add form only
     if (empty($errors)) {
 
         //Save the record to the database
-        $query = "INSERT INTO reservations (fullname, email, company, phone, date, timestamp, website, checkbox)
-                  VALUES ('$fullname', '$email', '$company', $phone, $date, '$timestamp', '$website', '$checkbox')";
+        $query = "INSERT INTO reservations (fullname, email, company, phone, date_day, date_time, website, agreed)
+                  VALUES ('$fullname', '$email', '$company', '$phone', '$date_day', '$date_time', '$website', '$agreed')";
         $result = mysqli_query($db, $query)
-        or die('Error: '.$query);
+        or die('Error: ' . $query);
 
         if ($result) {
             header('Location: index.php');
@@ -49,6 +48,9 @@ if (isset($_POST['submit'])) {
     </head>
     <body>
         <div id="container">
+            <div class="succeeded">
+                <p>Formulier succesvol verzonden</p>
+            </div>
 
             <div class="header-wrap">
                 <div class="header">
@@ -99,45 +101,47 @@ if (isset($_POST['submit'])) {
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="left">
-                            <label>Voor- en achternaam</label><br>
-                            <input type="text" name="fullname"/>
+                            <label>Voor- en achternaam <span class="errors"><?= isset($errors['fullname']) ? $errors['fullname'] : '' ?></span></label><br>
+                            <input type="text" name="fullname" value="<?= isset($fullname) ? $fullname : '' ?>"/>
                         </div>
                         <div class="right">
-                            <label>E-mailadres</label><br>
-                            <input type="email" name="email"/>
+                            <label>E-mailadres <span class="errors"><?= isset($errors['email']) ? $errors['email'] : '' ?></span></label><br>
+                            <input type="email" name="email" value="<?= isset($email) ? $email : '' ?>"/>
                         </div>
                         <div class="left">
-                            <label>Bedrijfsnaam</label><br>
-                            <input type="text" name="company"/>
+                            <label>Bedrijfsnaam <span class="errors"><?= isset($errors['company']) ? $errors['company'] : '' ?></span></label><br>
+                            <input type="text" name="company" value="<?= isset($company) ? $company : '' ?>"/>
                         </div>
                         <div class="right">
-                            <label>Telefoonnummer</label><br>
-                            <input type="number" name="phone"/>
+                            <label>Telefoonnummer <span class="errors"><?= isset($errors['phone']) ? $errors['phone'] : '' ?></span></label><br>
+                            <input type="number" name="phone" value="<?= isset($phone) ? $phone : '' ?>"/>
                         </div>
                         <div class="left">
-                            <label>Datum</label><br>
-                            <input type="date" name="date"/>
+                            <label>Datum <span class="errors"><?= isset($errors['date_day']) ? $errors['date_day'] : '' ?></span></label><br>
+                            <input type="date" name="date_day" value="<?= isset($date_day) ? $date_day : '' ?>"/>
                         </div>
                         <div class="right timestamp">
-                            <label>Tijdsblok</label><br>
-                                <select name="timestamp">
+                            <label>Tijdsblok <span class="errors"><?= isset($errors['date_time']) ? $errors['date_time'] : '' ?></span></label><br>
+                                <select name="date_time">
+                                    <option value="">Kies een tijdsblok</option>
                                     <option value="12:00">12:00</option>
                                     <option value="14:00">14:00</option>
                                     <option value="16:00">16:00</option>
                                 </select>
                         </div>
                         <div class="left">
-                            <label>Website bedrijf</label><br>
-                            <input type="text" name="website"/>
+                            <label>Website bedrijf <span class="errors"><?= isset($errors['website']) ? $errors['website'] : '' ?></span></label><br>
+                            <input type="text" name="website" value="<?= isset($website) ? $website : '' ?>"/>
                         </div>
+                        <input type="hidden" name="agreed" value="0">
                         <div class="agreed">
-                            <label>Toestemming gegevensverwerking</label><p></p>
-                            <input type="checkbox" name="checkbox" value="akkoord" class="inner-agreed">Ja, ik ga geef toestemming.<br/>
+                            <label>Toestemming gegevensverwerking <span class="errors"><?= isset($errors['agreed']) ? $errors['agreed'] : '' ?></span></label><p></p>
+                            <input type="checkbox" name="agreed" value="akkoord" class="inner-agreed"/>Ja, ik ga geef toestemming.<br/>
                             <p class="info-agreed">Met het invullen van deze gegevens geef ik toestemming aan DG Inernetbureau om mijn gegevens te verwerken,
                                 op de manier zoals beschreven is in de privacyverklaring.</p>
                         </div>
                         <div class="button left">
-                            <input type="submit" value="Verzenden"/>
+                            <input type="submit" name="submit" value="Verzenden"/>
                         </div>
                     </form>
                 </div>

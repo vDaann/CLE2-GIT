@@ -1,6 +1,4 @@
 <?php
-//Check if Post isset, else do nothing
-if (isset($_POST['submit'])) {
     //Require database in this file & image helpers
     require_once "includes/database.php";
 
@@ -12,7 +10,7 @@ if (isset($_POST['submit'])) {
     $date = mysqli_escape_string($db, $_POST['date']);
     $timestamp = mysqli_escape_string($db, $_POST['timestamp']);
     $website = mysqli_escape_string($db, $_POST['website']);
-    $checkbox = mysqli_escape_string($db, $_POST['checkbox']);
+    $agreed = mysqli_escape_string($db, $_POST['agreed']);
 
     //Require the form validation handling
     require_once "includes/form-validation.php";
@@ -21,8 +19,8 @@ if (isset($_POST['submit'])) {
     if (empty($errors)) {
 
         //Save the record to the database
-        $query = "INSERT INTO reservations (fullname, email, company, phone, date, timestamp, website, checkbox)
-                  VALUES ('$fullname', '$email', '$company', $phone, $date, '$timestamp', '$website', '$checkbox')";
+        $query = "INSERT INTO reservations (fullname, email, company, phone, date, timestamp, website, agreed)
+                  VALUES ('$fullname', '$email', '$company', $phone, $date, '$timestamp', '$website', '$agreed')";
         $result = mysqli_query($db, $query)
         or die('Error: '.$query);
 
@@ -36,5 +34,4 @@ if (isset($_POST['submit'])) {
         //Close connection
         mysqli_close($db);
     }
-}
 ?>
