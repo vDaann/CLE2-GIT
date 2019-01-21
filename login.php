@@ -31,45 +31,61 @@ if (isset($_POST['submit'])) {
             header("Location: reservations.php");
             exit;
         } else {
-            $errors[] = 'Uw wachtwoord is onjuist';
+            $errors[] = 'Uw combinatie van wachtwoord, e-mailadres is onjuist';
         }
     } else {
-        $errors[] = 'Uw email komt niet voor in de database';
+        $errors[] = 'Uw combinatie van wachtwoord, e-mailadres is onjuist';
     }
 }
 ?>
 <!doctype html>
 <html>
 <head>
-    <title>Music Collection Login</title>
+    <title>DG | Digital Creative Agency | Login</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="shortcut icon" type="image/png" href="images/favi_dg.png"/>
 </head>
 <body>
-<h1>Login</h1>
-<?php if (isset($errors) && !empty($errors)) { ?>
-    <ul class="errors">
-        <?php for ($i = 0; $i < count($errors); $i++) { ?>
-            <li><?= $errors[$i]; ?></li>
-        <?php } ?>
-    </ul>
-<?php } ?>
+    <div id="container">
+        <div class="header-wrap">
+            <div class="header">
+                <div class="logo">
+                    <img src="images/logo-dg.png">
+                    <p class="intro">Creative Digital Agency</p>
+                    <p class="outro">Full Service Bureau voor Digitale Groei</p>
+                </div>
+            </div>
+        </div>
 
-<form id="login" method="post" action="<?= $_SERVER['REQUEST_URI']; ?>">
-    <div>
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" value="<?= (isset($email) ? $email : ''); ?>"/>
+        <div class="login-wrap">
+            <div class="inner-login-wrap">
+                <div class="form" id="form">
+                    <h1>Login</h1>
+                    <?php if (isset($errors) && !empty($errors)) { ?>
+                        <ul class="errors">
+                            <?php for ($i = 0; $i < count($errors); $i++) { ?>
+                                <li><?= $errors[$i]; ?></li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
+
+                    <form id="login" method="post" action="<?= $_SERVER['REQUEST_URI']; ?>">
+                        <div class="left">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" value="<?= (isset($email) ? $email : ''); ?>"/>
+                        </div>
+                        <div class="right">
+                            <label for="password">Wachtwoord</label>
+                            <input type="password" name="password" id="password"/>
+                        </div>
+                        <div class="button left">
+                            <input type="submit" name="submit" value="Login"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label for="password">Wachtwoord</label>
-        <input type="password" name="password" id="password"/>
-    </div>
-    <div>
-        <input type="submit" name="submit" value="Login"/>
-    </div>
-</form>
-<div>
-    <a href="index.php">Go back to the list</a>
-</div>
 </body>
 </html>

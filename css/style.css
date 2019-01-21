@@ -269,3 +269,23 @@ select {
 .left {
     float: left;
 }
+
+.login-wrap {
+    width: 100%;
+    margin-top: -350px;
+    position: absolute;
+    z-index: 99999;
+}
+
+.login-wrap .button {
+    margin-bottom: 50px !important;
+}
+
+.inner-login-wrap {
+    background-color: rgba(255, 255, 255, .35);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 1200px;
+    margin: 0 auto;
+    height: 350px;
+}
