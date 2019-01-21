@@ -48,9 +48,6 @@ if (isset($_POST['submit'])) {
     </head>
     <body>
         <div id="container">
-            <div class="succeeded">
-                <p>Formulier succesvol verzonden</p>
-            </div>
 
             <div class="header-wrap">
                 <div class="header">
@@ -94,7 +91,7 @@ if (isset($_POST['submit'])) {
 
                     </div>
                 </div>
-                <div class="form">
+                <div class="form" id="form">
                     <div class="form-intro">
                         <p>Interesse in een vrijblijvende prototype sessie?</p>
                         <h2>Neem contact op</h2>
@@ -136,7 +133,7 @@ if (isset($_POST['submit'])) {
                         <input type="hidden" name="agreed" value="0">
                         <div class="agreed">
                             <label>Toestemming gegevensverwerking <span class="errors"><?= isset($errors['agreed']) ? $errors['agreed'] : '' ?></span></label><p></p>
-                            <input type="checkbox" name="agreed" value="akkoord" class="inner-agreed"/>Ja, ik ga geef toestemming.<br/>
+                            <input type="checkbox" name="agreed" value="akkoord" class="inner-agreed"/>Ja, ik geef toestemming.<br/>
                             <p class="info-agreed">Met het invullen van deze gegevens geef ik toestemming aan DG Inernetbureau om mijn gegevens te verwerken,
                                 op de manier zoals beschreven is in de privacyverklaring.</p>
                         </div>
