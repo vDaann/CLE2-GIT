@@ -61,7 +61,11 @@ if (isset($_POST['submit'])) {
         <div class="login-wrap">
             <div class="inner-login-wrap">
                 <div class="form" id="form">
-                    <h1>Login</h1>
+                    <div class="form-intro">
+                        <p>Alle aanmeldingen bekijken?</p>
+                        <h2>Login met je account</h2>
+                        <p class="micro"><a href="index.php">Terug naar prototype-sessie</a></p>
+                    </div>
                     <?php if (isset($errors) && !empty($errors)) { ?>
                         <ul class="errors">
                             <?php for ($i = 0; $i < count($errors); $i++) { ?>
@@ -72,7 +76,7 @@ if (isset($_POST['submit'])) {
 
                     <form id="login" method="post" action="<?= $_SERVER['REQUEST_URI']; ?>">
                         <div class="left">
-                            <label for="email">E-mail</label>
+                            <label for="email">E-mailadres</label>
                             <input type="email" name="email" id="email" value="<?= (isset($email) ? $email : ''); ?>"/>
                         </div>
                         <div class="right">

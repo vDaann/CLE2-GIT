@@ -95,6 +95,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-intro">
                         <p>Interesse in een vrijblijvende prototype sessie?</p>
                         <h2>Neem contact op</h2>
+                        <p class="micro"><a href="login.php">Alle aanmeldingen bekijken</a></p>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="left">
