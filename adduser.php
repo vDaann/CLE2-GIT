@@ -1,5 +1,4 @@
 <?php
-<?php
 session_start();
 //If our session doesn't exist, redirect & exit script
 if (!isset($_SESSION['loggedInUser'])) {
