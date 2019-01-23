@@ -1,4 +1,12 @@
 <?php
+<?php
+session_start();
+//If our session doesn't exist, redirect & exit script
+if (!isset($_SESSION['loggedInUser'])) {
+    header('Location: login.php');
+    exit;
+}
+
 if (isset($_POST['submit'])) {
 //Require database in this file & image helpers
     require_once "includes/database.php";

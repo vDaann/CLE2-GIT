@@ -32,10 +32,10 @@ require_once "includes/reservation-data.php";
         </div>
 
         <div class="login-wrap">
-            <div class="inner-login-wrap">
+            <div class="inner-login-wrap list">
                 <div class="form" id="form">
                     <div class="form-intro">
-                        <h2>Alle aanmeldingen in een lijst</h2>
+                        <h2>Alle aanmeldingen</h2>
                         <p class="micro"><a href="logout.php">Uitloggen</a></p>
                     </div>
                     <table>
@@ -48,6 +48,7 @@ require_once "includes/reservation-data.php";
                             <th>Datum</th>
                             <th>Tijdsblok</th>
                             <th>Website bedrijf</th>
+                            <th>Verwijderen</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -58,12 +59,13 @@ require_once "includes/reservation-data.php";
                             ?>
                             <tr>
                                 <td><?= $reservationList['fullname']; ?></td>
-                                <td><?= $reservationList['email']; ?></td>
+                                <td><a target="_blank" href="mailto:<?= $reservationList['email']; ?>"</a><?= $reservationList['email']; ?></td>
                                 <td><?= $reservationList['company']; ?></td>
-                                <td><?= $reservationList['phone']; ?></td>
+                                <td><a href="tel:0<?= $reservationList['phone']; ?>"</a>0<?= $reservationList['phone']; ?></td>
                                 <td><?= $reservationList['date_day']; ?></td>
                                 <td><?= $reservationList['date_time']; ?></td>
-                                <td><?= $reservationList['website']; ?></td>
+                                <td><a  target="_blank" href="//<?= $reservationList['website']; ?>"</a><?= $reservationList['website']; ?></td>
+                                <td><a class="button" href="delete.php?id=<?= $id; ?>">Verwijderen</a></td>
                             </tr>
                         <?php } ?>
                         </tbody>

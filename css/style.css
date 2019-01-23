@@ -290,6 +290,10 @@ select {
     height: 350px;
 }
 
+.list {
+    height: 100% !important;
+}
+
 .form-intro .micro {
     font-size: 16px;
     margin-bottom: 30px
@@ -311,6 +315,67 @@ select {
     transition: all .3s ease-in-out;
 }
 
+.form table {
+    width: 100%;
+}
+
 .form thead th {
-    border: black 2px solid;
+    background-color: #f7f8f9;
+    border-color: #dbddde;
+    border-width: 1px;
+    border-style: solid;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form tbody td {
+    text-align: left;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.form tbody tr:nth-child(even) {
+    background-color: #d8d8d8;
+}
+
+.form tbody a {
+    color: black;
+    transition: all .3s ease-in-out;
+}
+
+.form tbody a:hover {
+    color: #ff0000;
+    transition: all .3s ease-in-out;
+}
+
+.form tbody .button {
+    text-decoration: none;
+    height: 36px;
+    line-height: 32px;
+    font-size: 12px;
+    padding: 0 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #ffffff;
+    background-color: #dd0000;
+    font-family: 'Rubik', sans-serif;
+    border-color: #f85434;
+    font-style: normal;
+    font-weight: 700;
+    -webkit-border-radius: 2px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    border-width: 3px;
+    margin: 0 auto;
+    transition: all ease-in-out 0.3s;
+}
+
+.form tbody .button:hover {
+    color: black;
+    transition: all ease-in-out 0.3s;
 }
