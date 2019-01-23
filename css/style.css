@@ -297,6 +297,9 @@ select {
 .form-intro .micro {
     font-size: 16px;
     margin-bottom: 30px;
+}
+
+.form-intro .micro a {
     color: black;
 }
 
